@@ -10,6 +10,7 @@ RUN yum -y --setopt="tsflags=nodocs" update && \
     dnf group install -y "Development Tools" && \
     yum install --setopt="tsflags=nodocs" -y curl wget which \
       sudo \
+      rsync \
       git perl ruby \
       perl-Data-Dumper perl-IPC-Cmd \
       gcc gcc-c++ make \
