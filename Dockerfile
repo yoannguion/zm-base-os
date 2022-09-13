@@ -21,7 +21,9 @@ RUN yum -y --setopt="tsflags=nodocs" update && \
     rm -rf /var/cache/*
 
 # USERS
-RUN useradd -ms /bin/bash -G wheel build && \
+RUN groupadd -g 121 build && \
+    useradd -ms /bin/bash -u 1001 -g 121 build && \
+    usermod -aG wheel build && \
     sed -i -e '/^%wheel/s/)\s*ALL$/) NOPASSWD: ALL/' /etc/sudoers
 
 # REDUCE PRIVILEGE
