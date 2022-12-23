@@ -6,7 +6,7 @@ RUN yum install -y sudo wget perl ruby \
     perl-Data-Dumper perl-IPC-Cmd \
     gcc gcc-c++ make \
     java-1.8.0-openjdk-devel \
-    rpm-build createrepo zlib-devel gettext \
+    rpm-build createrepo zlib-devel curl-devel gettext \
     yum clean all && \
     rm -rf /var/cache/*
 
