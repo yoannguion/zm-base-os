@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [build_docker]
   push:
-    branches: [ github ]
+    branches: [ github-el6 ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,4 +15,4 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: yoannguion/zimbra-devcore
-        tags: github
+        tags: github-el6
