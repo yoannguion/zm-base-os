@@ -18,10 +18,10 @@ RUN groupadd -g 121 build && \
 
 
 # Install missing java dependencies
-RUN mkdir -p /home/build/.zm-dev-tools/
-RUN wget "http://mirror.metrocast.net/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz" -O - | tar --no-same-owner -xzf - -C /home/build/.zm-dev-tools/
-RUN wget "https://www.apache.org/dist/ant/binaries/apache-ant-1.9.16-bin.tar.gz" --no-check-certificate -O - | tar --no-same-owner -xzf - -C /home/build/.zm-dev-tools/
-RUN chown -R build: /home/build/.zm-dev-tools/
+RUN mkdir -p /.zm-dev-tools/
+RUN wget "http://mirror.metrocast.net/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz" -O - | tar --no-same-owner -xzf - -C /.zm-dev-tools/
+RUN wget "https://www.apache.org/dist/ant/binaries/apache-ant-1.9.16-bin.tar.gz" --no-check-certificate -O - | tar --no-same-owner -xzf - -C /.zm-dev-tools/
+RUN chown -R build: /.zm-dev-tools/
 
 # Use a newer git
 RUN wget "https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz" --no-check-certificate -O - | tar --no-same-owner -xzf - -C /root && \
