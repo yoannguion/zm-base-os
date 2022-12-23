@@ -2,7 +2,7 @@
 FROM yoannguion/centos6:latest
 
 # SYSTEM
-RUN yum install -y sudo wget perl ruby \
+RUN yum install -y sudo rsync wget perl ruby \
     perl-Data-Dumper perl-IPC-Cmd \
     gcc gcc-c++ make \
     java-1.8.0-openjdk-devel \
