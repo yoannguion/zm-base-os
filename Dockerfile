@@ -14,7 +14,9 @@ RUN yum install -y sudo rsync wget perl ruby \
 RUN groupadd -g 121 build && \
     useradd -ms /bin/bash -u 1001 -g 121 build && \
     usermod -aG wheel build && \
-    sed -i -e '/^%wheel/s/)\s*ALL$/) NOPASSWD: ALL/' /etc/sudoers
+    sed -i -e '/^%wheel/s/)\s*ALL$/) NOPASSWD: ALL/' /etc/sudoers && \
+    echo "Defaults:build        !requiretty" >> /etc/sudoers
+
 
 
 # Install missing java dependencies
