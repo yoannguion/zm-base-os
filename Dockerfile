@@ -3,7 +3,7 @@ FROM yoannguion/centos6:latest
 
 # SYSTEM
 RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
-    perl-Data-Dumper perl-IPC-Cmd perl-HTML-Tagset perl-libwww-perl expat-devel zip pcre-devel \
+    perl-Data-Dumper perl-IPC-Cmd perl-HTML-Tagset perl-libwww-perl perl-Crypt-OpenSSL-Random expat-devel zip pcre-devel \
     gcc gcc-c++ make cmake \
     java-1.8.0-openjdk-devel \
     rpm-build createrepo zlib-devel bzip2-devel check-devel json-c-devel pcre2-devel curl-devel gettext \
