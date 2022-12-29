@@ -4,7 +4,7 @@ FROM yoannguion/centos6:latest
 # SYSTEM
 RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
     perl-Data-Dumper perl-CPAN perl-IPC-Cmd perl-HTML-Tagset perl-libwww-perl perl-Crypt-OpenSSL-Random expat-devel zip pcre-devel \
-    gcc gcc-c++ make cmake \
+    gcc gcc-c++ make cmake libxml2 \
     java-1.8.0-openjdk-devel \
     rpm-build createrepo zlib-devel bzip2-devel check-devel json-c-devel pcre2-devel curl-devel gettext \
     yum clean all && \
