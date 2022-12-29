@@ -10,7 +10,7 @@ RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
     yum clean all && \
     rm -rf /var/cache/*
 
-RUN cpan install Crypt::OpenSSL::Guess <<<yes
+RUN curl -L https://cpanmin.us | perl - --sudo App::cpanminus && cpanm --install Crypt::OpenSSL::Guess && cpanm --install ExtUtils::Constant --force
 
 # USERS
 RUN groupadd -g 121 build && \
