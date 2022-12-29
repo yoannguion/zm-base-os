@@ -2,11 +2,11 @@
 FROM yoannguion/centos6:latest
 
 # SYSTEM
-RUN yum install -y sudo rsync wget perl ruby \
-    perl-Data-Dumper perl-IPC-Cmd \
+RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
+    perl-Data-Dumper perl-IPC-Cmd zip \
     gcc gcc-c++ make \
     java-1.8.0-openjdk-devel \
-    rpm-build createrepo zlib-devel curl-devel gettext \
+    rpm-build createrepo zlib-devel bzip2-devel check-devel json-c-devel pcre2-devel curl-devel gettext \
     yum clean all && \
     rm -rf /var/cache/*
 
