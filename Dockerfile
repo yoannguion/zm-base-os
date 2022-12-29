@@ -3,7 +3,7 @@ FROM yoannguion/centos6:latest
 
 # SYSTEM
 RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
-    perl-Data-Dumper perl-CPAN perl-IPC-Cmd perl-HTML-Tagset perl-Socket perl-libwww-perl perl-Test-Harness expat-devel zip pcre-devel \
+    perl-Data-Dumper perl-CPAN perl-IPC-Cmd perl-HTML-Tagset perl-Socket perl-libwww-perl perl-Test-Harness expat-devel zip pcre-devel openssl-devel\
     gcc gcc-c++ make cmake libxml2 \
     java-1.8.0-openjdk-devel \
     rpm-build createrepo zlib-devel libtool bzip2-devel check-devel json-c-devel pcre2-devel curl-devel gettext \
@@ -11,6 +11,15 @@ RUN yum install -y sudo rsync wget perl perl-core ncurses-devel ruby \
     rm -rf /var/cache/*
 
 RUN curl -L https://cpanmin.us | perl - --sudo App::cpanminus && cpanm --install Crypt::OpenSSL::Guess && cpanm --install ExtUtils::Constant --force
+
+RUN curl -L -O http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz && \
+  tar zxf autoconf-2.69.tar.gz && \
+  cd autoconf-2.69 && \
+  ./configure && \
+  make && make install && \
+  rm -rf autoconf-269*
+
+RUN autoconf --version
 
 # USERS
 RUN groupadd -g 121 build && \
